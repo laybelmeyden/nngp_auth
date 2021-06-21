@@ -162,7 +162,7 @@
         <p>Ниже приведено описание ошибки</p>
                         <table class="table table-danger">
                             <tr>
-                                <th>Столбец</th>
+                                <th>Строка</th>
                                 <th>Ошибка</th>
                                 <th>Значение</th>
                             </tr>
@@ -236,6 +236,12 @@
                 </div>
                 <div class="card" style="margin-top: 20px;">
                     <div class="card-header">Регистрация нового пользователя Excel</div>
+                    <p style="padding:10px;">Чтобы добавить пользователей из Excel загрузите файл где: А столбец - ФИО, В - почта, С - Пароль
+                    <br>
+                    Первая строка является заголовком таблицы.
+                    <br>
+                    <a href="/assets/111.xlsx">Пример файла</a>
+                    </p>
                     <div class="card-body">
                         <form method="POST" action="/user/import" enctype="multipart/form-data">
                             @csrf
