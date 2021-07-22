@@ -28,7 +28,7 @@ class MainController extends Controller
         $user->password = Hash::make($request->password);
         $user->assignRole('user');
         $user->save();
-        $to_email = 'adminadmin@rusinnovations.com';
+        $to_email = env('MAIL_USERNAME');
         $to_name = 'test';
         $data = array('email' => $user->email);
         \Mail::send('email.mailTest', $data, function ($message) use ($to_email, $data, $to_name) {
