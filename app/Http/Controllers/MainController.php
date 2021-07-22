@@ -28,7 +28,13 @@ class MainController extends Controller
         $user->password = Hash::make($request->password);
         $user->assignRole('user');
         $user->save();
-        
+        $to_email = 'trycollens@gmail.com';
+        $to_name = 'test';
+        $data = array('email' => $user->email);
+        \Mail::send('email.mailTest', $data, function ($message) use ($to_email, $data, $to_name) {
+            $message->from($to_email);
+            $message->to($data['email'], $to_name)->subject('Статус проекта');
+        });
         return redirect()->back()->withSuccess('Пользователь успешно добавлен!');
     }
 
