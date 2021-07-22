@@ -14,7 +14,7 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
-
+    'usermail' => env('MAIL_USERNAME'),
     /*
     |--------------------------------------------------------------------------
     | Mailer Configurations
@@ -41,7 +41,6 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
-            'usermail' => env('MAIL_USERNAME')
         ],
 
         'ses' => [
